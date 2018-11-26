@@ -19,3 +19,6 @@ public UnityEngine.UI.Button acceptButton;
 [FindInChildrenByName("acceptButton")]
 public UnityEngine.UI.Image acceptButtonImage;
 ```
+
+The injection occurs on script reload, scene save etc. **Not in runtime**.
+The injection is verbose, which means you'll get feedback on found/missing components.

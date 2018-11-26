@@ -24,4 +24,5 @@ The injection occurs on script reload, scene save etc. **Not in runtime**.
 The injection is verbose, which means you'll get feedback on found/missing components.
 
 See it do stuff:
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/at9qnACb3tU/0.jpg)](https://www.youtube.com/watch?v=at9qnACb3tU)

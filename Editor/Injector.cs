@@ -64,6 +64,9 @@ namespace XD {
 
 					foreach (var field in fields) {
 						var fnam = field.GetAttribute<FindInChildrenByNameAttribute>().name;
+						if (fnam == null) {
+							fnam = field.Name;
+						}
 						try {
 							var injectType = field.FieldType;
 							bool injectGO = (injectType == typeof(GameObject));

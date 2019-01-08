@@ -77,8 +77,8 @@ namespace XD {
 							} else {
 								__ = monobeh.GetComponentsInChildren(typeof(Transform), true).First(ff => ff.gameObject.name.ToLower().Replace(" ", "") == fnam.ToLower()).gameObject;
 							}
-							var old = so.FindProperty(field.Name).objectReferenceValue;
 							var prop = so.FindProperty(field.Name);
+							var old = prop.objectReferenceValue;
 							prop.objectReferenceValue = __;
 							props.Add(prop);
 							if (old != __) {
@@ -87,9 +87,6 @@ namespace XD {
 						} catch {
 							Debug.LogError($"Could not find {field.GetAttribute<FindInChildrenByNameAttribute>().name} <{field.FieldType}>", monobeh);
 						}
-
-						// in case of runtime:
-						//field.SetValue(monobeh, monobeh.transform.Find(field.GetAttribute<FindInChildrenByNameAttribute>().name).GetComponent(field.FieldType));
 					}
 					if (so.ApplyModifiedPropertiesWithoutUndo()) {
 						Debug.Log($"<color=green>[Injector]</color> Updating references in {monobeh.name}", monobeh);
